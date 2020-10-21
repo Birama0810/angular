@@ -15,12 +15,12 @@ export class AppComponent {
   appareils = [
     {
       name: 'Machine à laver',
-      status: 'allumée',
+      status: 'allumé',
       etat: 'réconditionné'
     },
     {
       name: 'Frigo',
-      status: 'éteint',
+      status: 'allumé',
       etat: 'neuf'
     },
     {
@@ -33,16 +33,7 @@ export class AppComponent {
       status: 'éteint',
       etat: 'occasion'
     }
-  ]
-  appareilOne = 'Machine à laver';
-  appareilTwo = 'Frigo';
-  appareilThree = 'Ordinateur';
-  StatutOne = 'éteint';
-  StatutTwo = 'allumé';
-  StatutThree = 'éteint';
-  EtatOne = 'réconditionnée';
-  EtatTwo = 'neuf';
-  EtatThree = 'occasion';
+  ];
 
   constructor() {
     setTimeout(
