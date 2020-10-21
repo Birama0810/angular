@@ -27,6 +27,11 @@ export class AppComponent {
       name: 'ordinateur',
       status: 'allumé',
       etat: 'occasion'
+    },
+    {
+      name: 'Rasoir électrique',
+      status: 'éteint',
+      etat: 'occasion'
     }
   ]
   appareilOne = 'Machine à laver';
