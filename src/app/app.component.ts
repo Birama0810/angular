@@ -11,6 +11,24 @@ function SetTimeout(param: () => void, number: 4000) {
 })
 export class AppComponent {
   isAuth = false;
+
+  appareils = [
+    {
+      name: 'Machine à laver',
+      status: 'allumée',
+      etat: 'réconditionné'
+    },
+    {
+      name: 'Frigo',
+      status: 'éteint',
+      etat: 'neuf'
+    },
+    {
+      name: 'ordinateur',
+      status: 'allumé',
+      etat: 'occasion'
+    }
+  ]
   appareilOne = 'Machine à laver';
   appareilTwo = 'Frigo';
   appareilThree = 'Ordinateur';

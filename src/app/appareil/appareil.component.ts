@@ -7,14 +7,14 @@ import { Component, Input,  OnInit } from '@angular/core';
 })
 export class AppareilComponent implements OnInit {
   @Input appareilName: string ;
-  @Input appareilStatut: string;
+  @Input appareilStatus: string;
   @Input appareilEtat: string;
   constructor() { }
 
   ngOnInit(): void {
   }
   getStatut(){
-    return this.appareilStatut;
+    return this.appareilStatus;
   }
   getEtat(){
     return this.appareilEtat;
