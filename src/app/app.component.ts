@@ -15,7 +15,7 @@ export class AppComponent {
   appareils = [
     {
       name: 'Machine à laver',
-      status: 'allumé',
+      status: 'éteint',
       etat: 'réconditionné'
     },
     {
