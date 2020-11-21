@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {consoleTestResultHandler} from 'tslint/lib/test';
+import {rejects} from 'assert';
 
 function SetTimeout(param: () => void, number: 4000) {
 }
@@ -11,6 +12,14 @@ function SetTimeout(param: () => void, number: 4000) {
 })
 export class AppComponent {
   isAuth = false;
+  lastUpdate = new Promise((resolve, reject) =>{
+    const date = new Date();
+    setTimeout (
+      () =>  {
+        resolve(date);
+      }, 2000
+    );
+  });
 
   appareils = [
     {
