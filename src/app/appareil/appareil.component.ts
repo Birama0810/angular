@@ -6,9 +6,9 @@ import { Component, Input,  OnInit } from '@angular/core';
   styleUrls: ['./appareil.component.css']
 })
 export class AppareilComponent implements OnInit {
-  @Input appareilName: string ;
-  @Input appareilStatus: string;
-  @Input appareilEtat: string;
+  @Input() appareilName: string ;
+  @Input() appareilStatus: string;
+  @Input() appareilEtat: string;
   constructor() { }
 
   ngOnInit(): void {
