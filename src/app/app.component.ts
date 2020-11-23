@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {consoleTestResultHandler} from 'tslint/lib/test';
 import {rejects} from 'assert';
+import {AppareilService} from './services/appareil.service';
 
 function SetTimeout(param: () => void, number: 4000) {
 }
@@ -10,7 +11,7 @@ function SetTimeout(param: () => void, number: 4000) {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   isAuth = false;
   lastUpdate = new Promise((resolve, reject) =>{
     const date = new Date();
@@ -20,39 +21,26 @@ export class AppComponent {
       }, 2000
     );
   });
+  appareils: any[];
 
-  appareils = [
-    {
-      name: 'Machine à laver',
-      status: 'éteint',
-      etat: 'réconditionné'
-    },
-    {
-      name: 'Frigo',
-      status: 'allumé',
-      etat: 'neuf'
-    },
-    {
-      name: 'ordinateur',
-      status: 'allumé',
-      etat: 'occasion'
-    },
-    {
-      name: 'Rasoir électrique',
-      status: 'éteint',
-      etat: 'occasion'
-    }
-  ];
-
-  constructor() {
+  constructor(private appareilService: AppareilService) {
     setTimeout(
       () => {
         this.isAuth = true;
       }, 4000
     );
   }
-  // tslint:disable-next-line:typedef
-  onAllumer(){
-    console.log(" On allume tout");
+  ngOnInit(): void {
+    this.appareils =  this.appareilService.appareils;
   }
+
+  // App.component.ts appelle les méthode service
+  onAllumer(){
+   this.appareilService.switchOnAll();
+  }
+  onEteindre(){
+    this.appareilService.switchOffAll();
+  }
+
+
 }
